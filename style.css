@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* --- Global Reset and Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+}
+:root {
+    --white-color: #fff;
+    --main-orange: #072A6C;
+    --button-blue: #072A6C;
+    --dark-overlay: rgba(0, 0, 0, 0.5); 
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+/* --- 1. VIDEO BACKGROUND STYLE --- */
+#background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover; 
+    filter: none;
+}
+
+/* --- HERO SECTION: Container for Overlay and Content --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: var(--white-color);
+}
+
+/* --- Dark Overlay sa ibabaw sa Video --- */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-overlay); 
+    z-index: -1;
+}
+
+.navbar {
+    padding: 20px 50px;
+    position: absolute; /* Gihimo siyang absolute para mo-cover sa tibuok width ug makita ang video */
+    width: 100%;
+    z-index: 10;
+    
+    /* FLEXBOX PARA SA LOGO (LEFT) UG MENU (CENTER) */
+    display: flex; 
+    justify-content: space-between; /* Gihatagan og space ang tulo ka elemento (Logo, Menu, Right Spacer) */
+    align-items: center;
+}
+
+/* NAGA-HIMO NI OG BLANK SPACE SA TUO PARA MA-CENTER ANG MENU */
+.right-spacer {
+    width: 150px; /* Ibutang ang width nga parehas sa logo para ma-align sa tunga ang menu */
+}
+
+
+/* STYLE PARA SA IMAGE LOGO */
+.site-logo {
+    height: 60px; /*size of the logo ni*/
+    width: auto;
+}
+
+.navbar .menu {
+    margin: 0; 
+}
+
+.navbar .menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar .menu ul li a {
+    color: var(--white-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar .menu ul li a:hover {
+    border-bottom: 2px solid var(--main-orange);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 5;
+    width: 90%;
+}
+
+.hero-content .line1 {
+    font-size: 4rem; 
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 0px; 
+    font-family: 'Dancing Script', cursive;
+    color: var(--white-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content .line2 {
+    font-size: 5.5rem; 
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px; 
+    font-family: 'Great Vibes', cursive;
+    color: var(--white-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: var(--white-color);
+}
+
+.selection-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.action-btn {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.chill-btn {
+    background-color: var(--button-blue);
+    color: var(--white-color);
+    border: 2px solid var(--button-blue);
+}
+
+.chill-btn:hover {
+    background-color: transparent;
+    border-color: var(--white-color);
+    color: var(--white-color);
+}
+
+.falls-btn {
+    background-color: #072A6C;
+    color: var(--white-color);
+    border: 2px solid #072A6C;
+}
+
+.falls-btn:hover {
+    background-color: transparent; 
+    border-color: white;
+    color: var(--white-color);
+}
